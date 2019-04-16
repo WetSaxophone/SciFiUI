@@ -27,16 +27,32 @@ public class UI extends PApplet
 
     public void settings()
     {
-        size(800, 800);
+        size(1000, 600);
         // Use fullscreen instead of size to make your interface fullscreen
         //fullScreen(P3D); 
     }
 
     public void setup()
     {
-        b = new Button(this, 50, 50, 100, 50, "I am a button");
-        mc = new MovingCircle(this, width / 2, height * .75f, 50);
-        radar = new Radar(this, 1, width / 2, height / 2, 100);
+        // b = new Button(this, 50, 50, 100, 50, "I am a button");
+        // mc = new MovingCircle(this, width / 2, height * .75f, 50);
+        // radar = new Radar(this, 1, width / 2, height / 2, 100);
+    }
+    float border = 50;
+
+    public void drawUI()
+    {
+        stroke(255);
+        line(border, border, border*2, border);
+        line(border, border, border, border*2);
+        line(border, height - border, border*2, height - border);
+        line(border, height - border, border, (height - border) - border);
+        line(width - border, border, width - border, border*2);
+        line(width - border, border, width - border*2, border);
+        line(width - border, height - border, width - border*2, height - border);
+        line(width - border, height - border, width - border, height - border*2);
+
+
     }
 
     Radar radar;
@@ -44,18 +60,30 @@ public class UI extends PApplet
     public void draw()
     {
         background(0);
-        b.render();
+        drawUI();
 
-        mc.update();
-        mc.render();
 
-        radar.update();
-        radar.render();
 
-        if (checkKey(LEFT))
-        {
-            System.out.println("Left arrow key pressed");
-        }
+
+
+
+
+
+
+
+
+        // b.render();
+
+        // mc.update();
+        // mc.render();
+
+        // radar.update();
+        // radar.render();
+
+        // if (checkKey(LEFT))
+        // {
+        //     System.out.println("Left arrow key pressed");
+        // }
     }
 }
 
