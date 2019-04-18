@@ -61,8 +61,6 @@ public class UI extends PApplet
         ellipse(width/2, height/2, circle2, circle2);
         ellipse(width/2, height/2, circle1, circle1);
 
-
-        
         line(border, border, border*2, border);
         line(border, border, border, border*2);
         line(border, height - border, border*2, height - border);
@@ -74,7 +72,11 @@ public class UI extends PApplet
 
         line(border, height/2, width - border, height/2);
 
+        line(width/2 - border*(float)1.5, height/2 - border, width/2 - border*(float)1.5, height/2 + border);
+        line(width/2 + border*(float)1.5, height/2 - border, width/2 + border*(float)1.5, height/2 + border);
 
+        line(width/2 - border, height/2 - border, width/2 + border, height/2 - border);
+        line(width/2 - border, height/2 + border, width/2 + border, height/2 + border);
     }
 
 
@@ -85,12 +87,12 @@ public class UI extends PApplet
         background(0);
         drawUI();
 
-        translate(width/2, height/2);
-        for(int i = 0; i < stars.length; i++)
-        {
-            stars[i].update();
-            stars[i].render();
-        }
+        // translate(width/2, height/2);
+        // for(int i = 0; i < stars.length; i++)
+        // {
+        //     stars[i].update();
+        //     stars[i].render();
+        // }
 
         // b.render();
 

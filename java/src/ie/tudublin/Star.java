@@ -19,7 +19,13 @@ public class Star extends PApplet
 
     public void update()
     {
-        z = z - 1;
+        z = z - 3;
+        if(z < 1)
+        {
+            z = width;
+            x = random(-width, width);
+            y = random(-height, height);
+        }
     }
     
     public void render()
@@ -29,8 +35,8 @@ public class Star extends PApplet
 
         float sx = map(x / z, 0, 1, 0, width);
         float sy = map(y / z, 0, 1, 0, height);
-
-        ui.ellipse(sx, sy, 8, 8);
+        float r = map(z, 0, width, 8, 0);
+        ui.ellipse(sx, sy, r, r);
 
 	}
 
