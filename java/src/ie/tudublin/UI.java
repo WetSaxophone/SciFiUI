@@ -79,6 +79,16 @@ public class UI extends PApplet
         line(width/2 - border, height/2 + border, width/2 + border, height/2 + border);
     }
 
+    public void drawStars()
+    {
+        translate(width/2, height/2);
+        for(int i = 0; i < stars.length; i++)
+        {
+            stars[i].update();
+            stars[i].render();
+        }
+    }
+
 
     Radar radar;
 
@@ -87,12 +97,7 @@ public class UI extends PApplet
         background(0);
         drawUI();
 
-        // translate(width/2, height/2);
-        // for(int i = 0; i < stars.length; i++)
-        // {
-        //     stars[i].update();
-        //     stars[i].render();
-        // }
+        drawStars();
 
         // b.render();
 
