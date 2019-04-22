@@ -39,7 +39,7 @@ public class UI extends PApplet
     {
         for(int i = 0; i < stars.length; i++)
         {
-            stars[i] = new Star(this, random(-width,width), random(-height, height), random(width));
+            stars[i] = new Star(this, random(-width,width), random(-height, height), random(width), map(mouseX, 0, width, 0, 20));
         }
         //b = new Button(this, 50, 50, 100, 50, "I am a button");
         // mc = new MovingCircle(this, width / 2, height * .75f, 50);

@@ -8,18 +8,20 @@ public class Star extends PApplet
     private float x;
     private float y;
     private float z;
+    private float starSpeed;
 
-    public Star(UI ui, float x, float y, float z)
+    public Star(UI ui, float x, float y, float z, float starSpeed)
     {
         this.ui = ui;
         this.x = x;
         this.y = y;
         this.z = z;
+        this.starSpeed = starSpeed;
     }
 
     public void update()
     {
-        z = z - 3;
+        z = z - starSpeed;
         if(z < 1)
         {
             z = width;
