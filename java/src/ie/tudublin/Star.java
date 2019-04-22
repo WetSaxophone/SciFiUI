@@ -8,20 +8,18 @@ public class Star extends PApplet
     private float x;
     private float y;
     private float z;
-    private float starSpeed;
 
-    public Star(UI ui, float x, float y, float z, float starSpeed)
+    public Star(UI ui, float x, float y, float z)
     {
         this.ui = ui;
         this.x = x;
         this.y = y;
         this.z = z;
-        this.starSpeed = starSpeed;
     }
 
     public void update()
     {
-        z = z - starSpeed;
+        z = z - 2;
         if(z < 1)
         {
             z = width;
@@ -37,7 +35,7 @@ public class Star extends PApplet
 
         float sx = map(x / z, 0, 1, 0, width);
         float sy = map(y / z, 0, 1, 0, height);
-        float r = map(z, 0, width, 8, 0);
+        float r = map(z, 0, width, 6, 0);
         ui.ellipse(sx, sy, r, r);
 
 	}

@@ -4,9 +4,10 @@ import processing.core.PApplet;
 
 public class UI extends PApplet
 {
+    public float starSpeed;
     Button b;
     MovingCircle mc;
-    Star[] stars = new Star[200];
+    Star[] stars = new Star[400];
 
 
 
@@ -39,7 +40,7 @@ public class UI extends PApplet
     {
         for(int i = 0; i < stars.length; i++)
         {
-            stars[i] = new Star(this, random(-width,width), random(-height, height), random(width), map(mouseX, 0, width, 0, 20));
+            stars[i] = new Star(this, random(-width,width), random(-height, height), random(150));
         }
         //b = new Button(this, 50, 50, 100, 50, "I am a button");
         // mc = new MovingCircle(this, width / 2, height * .75f, 50);
@@ -88,15 +89,13 @@ public class UI extends PApplet
             stars[i].render();
         }
     }
-
-
-    Radar radar;
+    
+    //Radar radar;
 
     public void draw()
     {
         background(0);
         drawUI();
-
         drawStars();
 
         // b.render();
