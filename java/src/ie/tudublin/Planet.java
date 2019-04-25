@@ -35,7 +35,7 @@ public class Planet extends PApplet
 
         float sx = map(x / z, 0, 1, 0, width);
         float sy = map(y / z, 0, 1, 0, height);
-        float r = map(z, 0, width, 600, 4);
+        float r = map(z, 0, width, 850, 4);
         ui.ellipse(sx, sy, r, r);
 
 	}

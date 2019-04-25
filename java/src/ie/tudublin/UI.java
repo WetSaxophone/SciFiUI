@@ -4,8 +4,9 @@ import processing.core.PApplet;
 
 public class UI extends PApplet
 {
-    public float starSpeed;
+    //public float starSpeed;
     Button b;
+    Radar radar;
     MovingCircle mc;
     Star[] stars = new Star[400];
     Planet planet;
@@ -87,32 +88,33 @@ public class UI extends PApplet
 
     public void drawStars()
     {
+        pushMatrix();
         translate(width/2, height/2);
         for(int i = 0; i < stars.length; i++)
         {
             stars[i].update();
             stars[i].render();
         }
+        popMatrix();
     }
 
     public void drawPlanets()
     {
+        pushMatrix();
         translate(width/2, height/2);
         planet.update();
         planet.render();
+        popMatrix();
     }
  
-    
-    Radar radar;
-
     public void draw()
     {
         background(0);
+        drawStars();
         drawPlanets();
         drawUI();
         radar.update();
         radar.render();
-        //drawStars();
 
         // b.render();
 
