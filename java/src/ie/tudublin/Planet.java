@@ -30,7 +30,7 @@ public class Planet extends PApplet
     
     public void render()
     {
-        ui.fill(20);
+        ui.fill(random(20,25),random(20,25),random(20,25));
         ui.noStroke();
 
         float sx = map(x / z, 0, 1, 0, width);
