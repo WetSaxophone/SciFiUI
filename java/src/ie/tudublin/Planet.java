@@ -2,14 +2,14 @@ package ie.tudublin;
 
 import processing.core.PApplet;
 
-public class Planets extends PApplet
+public class Planet extends PApplet
 {
     UI ui;
     private float x;
     private float y;
     private float z;
 
-    public Planets(UI ui, float x, float y, float z)
+    public Planet(UI ui, float x, float y, float z)
     {
         this.ui = ui;
         this.x = x;
@@ -19,23 +19,23 @@ public class Planets extends PApplet
 
     public void update()
     {
-        z = (float) (z - 0.1);
+        z = (float) (z - 0.2);
         if(z < 1)
         {
             z = width;
-            x = random(-width, width);
-            y = random(-height, height);
+            x = random(random(-width, width/(float)3.5), random(width/(float)1.5, width));
+            y = random(-height/3, height);
         }
     }
     
     public void render()
     {
-        ui.fill(255);
+        ui.fill(20);
         ui.noStroke();
 
         float sx = map(x / z, 0, 1, 0, width);
         float sy = map(y / z, 0, 1, 0, height);
-        float r = map(z, 0, width, 64, 32);
+        float r = map(z, 0, width, 600, 4);
         ui.ellipse(sx, sy, r, r);
 
 	}

@@ -8,7 +8,7 @@ public class UI extends PApplet
     Button b;
     MovingCircle mc;
     Star[] stars = new Star[400];
-    Planets[] planets = new Planets[2];
+    Planet planet;
 
 
 
@@ -44,10 +44,7 @@ public class UI extends PApplet
             stars[i] = new Star(this, random(-width,width), random(-height, height), random(150));
         }
 
-        for(int i = 0; i < planets.length; i++)
-        {
-            planets[i] = new Planets(this, random(-width,width), random(-height, height), random(150));
-        }
+        planet = new Planet(this, random(-width,width), random(-height, height), random(100));
 
         radar = new Radar(this, 1, width - border*4, border*4, 100);
 
@@ -64,7 +61,7 @@ public class UI extends PApplet
     {
         stroke(255);
 
-        fill(0);
+        noFill();
         strokeWeight((float) 1.5);
         ellipse(width/2, height/2, circle3, circle3);
         ellipse(width/2, height/2, circle2, circle2);
@@ -101,23 +98,21 @@ public class UI extends PApplet
     public void drawPlanets()
     {
         translate(width/2, height/2);
-        for(int i = 0; i < planets.length; i++)
-        {
-            planets[i].update();
-            planets[i].render();
-        }
+        planet.update();
+        planet.render();
     }
+ 
     
     Radar radar;
 
     public void draw()
     {
         background(0);
+        drawPlanets();
         drawUI();
         radar.update();
         radar.render();
-        drawStars();
-        drawPlanets();
+        //drawStars();
 
         // b.render();
 
