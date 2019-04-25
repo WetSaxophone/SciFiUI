@@ -19,7 +19,7 @@ public class Star extends PApplet
 
     public void update()
     {
-        z = z - 3;
+        z = z - 2;
         if(z < 1)
         {
             z = width;

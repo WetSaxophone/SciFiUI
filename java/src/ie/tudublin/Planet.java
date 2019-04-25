@@ -9,6 +9,7 @@ public class Planet extends PApplet
     private float y;
     private float z;
 
+
     public Planet(UI ui, float x, float y, float z)
     {
         this.ui = ui;
