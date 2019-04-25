@@ -8,28 +8,33 @@ public class Star extends PApplet
     private float x;
     private float y;
     private float z;
+    private float speed;
 
-    public Star(UI ui, float x, float y, float z)
+    
+    public Star(UI ui, float x, float y, float z, float speed)
     {
         this.ui = ui;
         this.x = x;
         this.y = y;
         this.z = z;
+        this.speed = speed;
     }
 
     public void update()
     {
-        z = z - 2;
+        z = z - speed;
         if(z < 1)
         {
             z = width;
             x = random(-width, width);
             y = random(-height, height);
         }
+        
     }
     
     public void render()
     {
+
         ui.fill(255);
         ui.noStroke();
 
@@ -39,5 +44,75 @@ public class Star extends PApplet
         ui.ellipse(sx, sy, r, r);
 
 	}
+
+    /**
+     * @return the ui
+     */
+    public UI getUi() {
+        return ui;
+    }
+
+    /**
+     * @param ui the ui to set
+     */
+    public void setUi(UI ui) {
+        this.ui = ui;
+    }
+
+    /**
+     * @return the x
+     */
+    public float getX() {
+        return x;
+    }
+
+    /**
+     * @param x the x to set
+     */
+    public void setX(float x) {
+        this.x = x;
+    }
+
+    /**
+     * @return the y
+     */
+    public float getY() {
+        return y;
+    }
+
+    /**
+     * @param y the y to set
+     */
+    public void setY(float y) {
+        this.y = y;
+    }
+
+    /**
+     * @return the z
+     */
+    public float getZ() {
+        return z;
+    }
+
+    /**
+     * @param z the z to set
+     */
+    public void setZ(float z) {
+        this.z = z;
+    }
+
+    /**
+     * @return the speed
+     */
+    public float getSpeed() {
+        return speed;
+    }
+
+    /**
+     * @param speed the speed to set
+     */
+    public void setSpeed(float speed) {
+        this.speed = speed;
+    }
 
 }
