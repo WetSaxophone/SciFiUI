@@ -33,11 +33,6 @@ public class Button extends PApplet
 
     public void render()
     {
-        if (mousePressed == true)
-        {
-        System.out.println("Hello World");
-        ui.fill(255);
-        }
         ui.noFill();
         ui.stroke(255);
         ui.rect(x, y, width, height);

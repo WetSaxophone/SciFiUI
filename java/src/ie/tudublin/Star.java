@@ -8,7 +8,7 @@ public class Star extends PApplet
     private float x;
     private float y;
     private float z;
-    private float speed;
+    private float starSpeed;
     
     public Star(UI ui, float x, float y, float z)
     {
@@ -18,9 +18,9 @@ public class Star extends PApplet
         this.z = z;
     }
 
-    public void update(float speed)
+    public void update(float starSpeed)
     {
-        z = z - speed;
+        z = z - starSpeed;
         if(z < 1)
         {
             z = width;
@@ -100,17 +100,19 @@ public class Star extends PApplet
     }
 
     /**
-     * @return the speed
+     * @return the starSpeed
      */
-    public float getSpeed() {
-        return speed;
+    public float getStarSpeed() {
+        return starSpeed;
     }
 
     /**
-     * @param speed the speed to set
+     * @param starSpeed the starSpeed to set
      */
-    public void setSpeed(float speed) {
-        this.speed = speed;
+    public void setStarSpeed(float starSpeed) {
+        this.starSpeed = starSpeed;
     }
+
+  
 
 }

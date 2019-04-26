@@ -8,6 +8,8 @@ public class Planet extends PApplet
     private float x;
     private float y;
     private float z;
+    private float planetSpeed;
+
 
 
     public Planet(UI ui, float x, float y, float z)
@@ -18,9 +20,9 @@ public class Planet extends PApplet
         this.z = z;
     }
 
-    public void update()
+    public void update(float planetSpeed)
     {
-        z = (float) (z - 0.2);
+        z = z - planetSpeed;
         if(z < 1)
         {
             z = width;
@@ -40,5 +42,75 @@ public class Planet extends PApplet
         ui.ellipse(sx, sy, r, r);
 
 	}
+
+    /**
+     * @return the ui
+     */
+    public UI getUi() {
+        return ui;
+    }
+
+    /**
+     * @param ui the ui to set
+     */
+    public void setUi(UI ui) {
+        this.ui = ui;
+    }
+
+    /**
+     * @return the x
+     */
+    public float getX() {
+        return x;
+    }
+
+    /**
+     * @param x the x to set
+     */
+    public void setX(float x) {
+        this.x = x;
+    }
+
+    /**
+     * @return the y
+     */
+    public float getY() {
+        return y;
+    }
+
+    /**
+     * @param y the y to set
+     */
+    public void setY(float y) {
+        this.y = y;
+    }
+
+    /**
+     * @return the z
+     */
+    public float getZ() {
+        return z;
+    }
+
+    /**
+     * @param z the z to set
+     */
+    public void setZ(float z) {
+        this.z = z;
+    }
+
+    /**
+     * @return the planetSpeed
+     */
+    public float getPlanetSpeed() {
+        return planetSpeed;
+    }
+
+    /**
+     * @param planetSpeed the planetSpeed to set
+     */
+    public void setPlanetSpeed(float planetSpeed) {
+        this.planetSpeed = planetSpeed;
+    }
 
 }
