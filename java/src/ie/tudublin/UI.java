@@ -51,7 +51,9 @@ public class UI extends PApplet
 
         radar = new Radar(this, 1, width - border*4, border*4, 100);
 
-        //b = new Button(this, 50, 50, 100, 50, "I am a button");
+        b = new Button(this, border*2, border*2, 200, 50, "Click Here To Refuel");
+
+
         // mc = new MovingCircle(this, width / 2, height * .75f, 50);
     }
 
@@ -115,10 +117,12 @@ public class UI extends PApplet
         drawStars();
         drawPlanets();
         drawUI();
+        
         radar.update();
         radar.render();
 
-        // b.render();
+        b.update();
+        b.render();
 
         //mc.update();
         //mc.render();
