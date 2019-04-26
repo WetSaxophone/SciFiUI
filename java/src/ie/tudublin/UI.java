@@ -43,7 +43,7 @@ public class UI extends PApplet
     {
         for(int i = 0; i < stars.length; i++)
         {
-            stars[i] = new Star(this, random(-width,width), random(-height, height), random(150), speed = map(mouseX, 0, width, 0, 20));
+            stars[i] = new Star(this, random(-width,width), random(-height, height), random(150));
             
         }
 
@@ -94,7 +94,7 @@ public class UI extends PApplet
         translate(width/2, height/2);
         for(int i = 0; i < stars.length; i++)
         {
-            stars[i].update();
+            stars[i].update(map(mouseX, 0, width, 0, 10));
             stars[i].render();
         }
         popMatrix();
