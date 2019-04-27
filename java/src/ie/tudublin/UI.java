@@ -44,13 +44,14 @@ public class UI extends PApplet
 
     public void setup()
     {
+        loadData();
+        printPlanets();
+
         for(int i = 0; i < stars.length; i++)
         {
             stars[i] = new Star(this, random(-width,width), random(-height, height), random(150));
             
         }
-
-        planet = new Planet(this, random(-width,width), random(-height, height), random(100));
 
         radar = new Radar(this, 1, width - border*4, border*4, 100);
 
@@ -62,12 +63,18 @@ public class UI extends PApplet
 
     public void loadData()
     {
-        Table table = loadTable("Habitats.csv", "Display Name");
+        Table table = loadTable("Habitats.csv", "header");
 
         for (TableRow row : table.rows()) 
         {
-            planet = new Planet(this,row, random(-width,width), random(-height, height), random(100));
+            planet = new Planet(this, row, random(-width,width), random(-height, height), random(100));
+            planets.add(planet);
+        }
+    }
 
+    public void printPlanets() {
+        for (Planet planet : planets) {
+            System.out.println(planet);
         }
     }
 
@@ -123,6 +130,10 @@ public class UI extends PApplet
         planet.update(map(mouseX, 0, width, 0, 1));
         planet.render();
         popMatrix();
+        for (Planet p : planets)
+        {
+        text(p.getDisplayName(), 20 + 20, 20);
+        }
     }
  
     public void draw()

@@ -25,7 +25,7 @@ public class Planet extends PApplet
     }
 
 
-    public Planet(UI ui, float x, float y, float z)
+    public Planet(UI ui, TableRow row, float x, float y, float z)
     {
         this.ui = ui;
         this.x = x;
