@@ -1,15 +1,17 @@
 package ie.tudublin;
 
+import java.util.ArrayList;
 import processing.core.PApplet;
+import processing.data.Table;
+import processing.data.TableRow;
 
 public class UI extends PApplet
 {
     public float starSpeed;
-    public float starsPassed;
+    public float planetsPassed;
 
     Button b;
     Radar radar;
-    MovingCircle mc;
     Star[] stars = new Star[400];
     Planet planet;
 
@@ -56,6 +58,17 @@ public class UI extends PApplet
 
 
         // mc = new MovingCircle(this, width / 2, height * .75f, 50);
+    }
+
+    public void loadData()
+    {
+        Table table = loadTable("Habitats.csv", "Display Name");
+
+        for (TableRow row : table.rows()) 
+        {
+            planet = new Planet(this,row, random(-width,width), random(-height, height), random(100));
+
+        }
     }
 
     float border = 50;

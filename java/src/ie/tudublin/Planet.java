@@ -1,16 +1,28 @@
 package ie.tudublin;
 
 import processing.core.PApplet;
+import processing.data.TableRow;
 
 public class Planet extends PApplet
 {
     UI ui;
+    private String displayName;
     private float x;
     private float y;
     private float z;
     private float planetSpeed;
-    public float planetsPassed;
+    public int planetsPassed;
 
+
+    public void setDisplayName(String displayName)
+    {
+        this.displayName = displayName;
+    }
+
+    public String getDisplayName()
+    {
+        return displayName;
+    }
 
 
     public Planet(UI ui, float x, float y, float z)
@@ -30,7 +42,9 @@ public class Planet extends PApplet
             x = random(random(-width, width/(float)3.5), random(width/(float)1.5, width));
             y = random(-height/3, height);
             planetsPassed += 1;
+            System.out.println(planetsPassed);
         }
+
 
     }
     
@@ -114,6 +128,16 @@ public class Planet extends PApplet
      */
     public void setPlanetSpeed(float planetSpeed) {
         this.planetSpeed = planetSpeed;
+    }
+
+    public String toString()
+    {
+        return displayName;  
+    }
+
+    public Planet(TableRow row)
+    {
+        displayName = row.getString("Display Name");
     }
 
 }
