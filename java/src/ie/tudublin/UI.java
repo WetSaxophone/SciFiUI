@@ -69,6 +69,7 @@ public class UI extends PApplet
         {
             planet = new Planet(this, row, random(-width,width), random(-height, height), random(100));
             planets.add(planet);
+
         }
     }
 
@@ -133,11 +134,19 @@ public class UI extends PApplet
         popMatrix();
 
     
-        float x = width/4;
+        float x = border;
         float y = height/2 - border/2;
         fill(255);
-        text(planet.getPlanetsPassed(), x, y);
-        text(planet.getDisplayName(), x*2, y*2);
+        textSize(30);
+        textAlign(LEFT, CENTER);
+        text("Planets Passed: " + planet.getPlanetsPassed(), x, y);
+        text("Planet Name: " + planet.getDisplayName(), x, y - border);
+
+        textSize(14);
+
+        // for (Planet planet : planets) {
+        //     System.out.println(planet);
+        // }
 
 
         //     fill(255);
