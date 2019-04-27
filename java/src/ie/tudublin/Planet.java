@@ -14,16 +14,6 @@ public class Planet extends PApplet
     public int planetsPassed;
 
 
-    public void setDisplayName(String displayName)
-    {
-        this.displayName = displayName;
-    }
-
-    public String getDisplayName()
-    {
-        return displayName;
-    }
-
 
     public Planet(UI ui, TableRow row, float x, float y, float z)
     {
@@ -64,7 +54,20 @@ public class Planet extends PApplet
         ui.fill(255);
         ui.text(displayName, sx, sy);
 
-	}
+
+    }
+    
+
+
+    public void setDisplayName(String displayName)
+    {
+        this.displayName = displayName;
+    }
+
+    public String getDisplayName()
+    {
+        return displayName;
+    }
 
     /**
      * @return the ui
@@ -139,6 +142,20 @@ public class Planet extends PApplet
     public String toString()
     {
         return displayName;  
+    }
+
+    /**
+     * @return the planetsPassed
+     */
+    public int getPlanetsPassed() {
+        return planetsPassed;
+    }
+
+    /**
+     * @param planetsPassed the planetsPassed to set
+     */
+    public void setPlanetsPassed(int planetsPassed) {
+        this.planetsPassed = planetsPassed;
     }
 
 

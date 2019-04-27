@@ -141,7 +141,15 @@ public class UI extends PApplet
         drawStars();
         drawPlanets();
         drawUI();
-        
+        textAlign(LEFT, CENTER);
+        for (Planet p : planets) {
+            float x = p.getX();
+            float y = p.getY();
+
+
+            fill(255);
+            text(p.getDisplayName(), x + 20, y);
+        }
         radar.update();
         radar.render();
 
