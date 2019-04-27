@@ -9,6 +9,7 @@ public class Planet extends PApplet
     private float y;
     private float z;
     private float planetSpeed;
+    public float planetsPassed;
 
 
 
@@ -28,7 +29,9 @@ public class Planet extends PApplet
             z = width;
             x = random(random(-width, width/(float)3.5), random(width/(float)1.5, width));
             y = random(-height/3, height);
+            planetsPassed += 1;
         }
+
     }
     
     public void render()

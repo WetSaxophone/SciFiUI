@@ -5,6 +5,7 @@ import processing.core.PApplet;
 public class UI extends PApplet
 {
     public float starSpeed;
+    public float starsPassed;
 
     Button b;
     Radar radar;
@@ -127,14 +128,15 @@ public class UI extends PApplet
         b.update();
         b.render();
 
+
+
         //mc.update();
         //mc.render();
 
-        if (checkKey(LEFT))
-        {
-            System.out.println("Left arrow key pressed");
-            var += 2;
-        }
+        // if (checkKey(LEFT))
+        // {
+        //     System.out.println("Left arrow key pressed");
+        // }
     }
 
 }

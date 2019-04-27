@@ -27,7 +27,7 @@ public class Star extends PApplet
             x = random(-width, width);
             y = random(-height, height);
         }
-        
+
     }
     
     public void render()
