@@ -125,11 +125,14 @@ public class UI extends PApplet
 
     public void drawPlanets()
     {
+
         pushMatrix();
         translate(width/2, height/2);
         planet.update(map(mouseX, 0, width, 0, 1));
         planet.render();
         popMatrix();
+        
+
     }
  
     public void draw()

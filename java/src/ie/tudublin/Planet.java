@@ -44,6 +44,7 @@ public class Planet extends PApplet
             y = random(-height/3, height);
             planetsPassed += 1;
             System.out.println(planetsPassed);
+            
         }
 
 
@@ -58,6 +59,10 @@ public class Planet extends PApplet
         float sy = map(y / z, 0, 1, 0, height);
         float r = map(z, 0, width, 850, 4);
         ui.ellipse(sx, sy, r, r);
+
+        ui.textAlign(LEFT, CENTER);
+        ui.fill(255);
+        ui.text(displayName, sx, sy);
 
 	}
 
