@@ -40,9 +40,6 @@ public class UI extends PApplet
         //fullScreen(P3D); 
     }
 
-
-    private float var = 2;
-
     public void setup()
     {
         for(int i = 0; i < stars.length; i++)
@@ -55,7 +52,7 @@ public class UI extends PApplet
 
         radar = new Radar(this, 1, width - border*4, border*4, 100);
 
-        b = new Button(this, border*var, border*2, 200, 50, "Click Here To Refuel");
+        b = new Button(this, border*2, border*2, 200, 50, "Click Here To Refuel");
 
 
         // mc = new MovingCircle(this, width / 2, height * .75f, 50);

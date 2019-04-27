@@ -23,15 +23,13 @@ public class Button extends PApplet
 
     public void update()
     {
-        while(ui.keyCode == LEFT)
-        {
-            ui.fill(255);  
-        }
+
     }
 
 
     public void render()
     {
+        ui.noFill();
         ui.stroke(255);
         ui.rect(x, y, width, height);
         ui.textAlign(PApplet.CENTER, PApplet.CENTER);
