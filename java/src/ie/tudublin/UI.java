@@ -131,9 +131,30 @@ public class UI extends PApplet
         planet.update(map(mouseX, 0, width, 0, 1));
         planet.render();
         popMatrix();
+
+    
+        float x = width/4;
+        float y = height/2 - border/2;
+        fill(255);
+        text(planet.getPlanetsPassed(), x, y);
+        text(planet.getDisplayName(), x*2, y*2);
+
+
+        //     fill(255);
+        //     text(p.getDisplayName(), x + 20, y);
+        // }
+        // for(int i = 0; i <= planet.getPlanetsPassed(); i++ )
+        // {
+        //     if(i + 1 == planet.getPlanetsPassed())
+        //     {
+        //     System.out.println("Planet just passed: "+planets.get(planet.getPlanetsPassed()));
+
+        //     }
+        
+        // }
+    }
         
 
-    }
  
     public void draw()
     {
@@ -142,14 +163,7 @@ public class UI extends PApplet
         drawPlanets();
         drawUI();
         textAlign(LEFT, CENTER);
-        for (Planet p : planets) {
-            float x = p.getX();
-            float y = p.getY();
-
-
-            fill(255);
-            text(p.getDisplayName(), x + 20, y);
-        }
+        
         radar.update();
         radar.render();
 

@@ -50,9 +50,9 @@ public class Planet extends PApplet
         float r = map(z, 0, width, 850, 4);
         ui.ellipse(sx, sy, r, r);
 
-        ui.textAlign(LEFT, CENTER);
-        ui.fill(255);
-        ui.text(displayName, sx, sy);
+        // ui.textAlign(LEFT, CENTER);
+        // ui.fill(255);
+        // ui.text(displayName, sx, sy);
 
 
     }
