@@ -158,9 +158,6 @@ public class Planet extends PApplet
         this.planetsPassed = planetsPassed;
     }
 
-	public String get(int planetsPassed2) {
-		return null;
-	}
 
 
 }
