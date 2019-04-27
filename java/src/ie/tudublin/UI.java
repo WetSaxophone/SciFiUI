@@ -162,19 +162,34 @@ public class UI extends PApplet
         
         // }
     }
+
+
+    public void drawRadar()
+    {
+
+        // width - border*4, border*4
+        // float sx = map(planet.getX() / planet.getZ(), planet.getX(), width, width - border*4);
+        // float sy = map(planet.getY() / planet.getZ(), planet.getY(), height, border*4);
+        float sx = map(planet.getX() / planet.getZ(), 0, 1, width - border*4, width);
+        float sy = map(planet.getY() / planet.getZ(), 0, 1, border*4, border*4 - border);
+        fill(255);
+        ellipse(sx, sy, 8, 8);
+        pushMatrix();
+        radar.update();
+        radar.render();
+        popMatrix();
+    }
         
 
  
     public void draw()
     {
         background(0);
-        drawStars();
+        //drawStars();
         drawPlanets();
         drawUI();
         textAlign(LEFT, CENTER);
-        
-        radar.update();
-        radar.render();
+        drawRadar();
 
         b.update();
         b.render();
