@@ -28,6 +28,7 @@ public class Planet extends PApplet
     public Planet(UI ui, TableRow row, float x, float y, float z)
     {
         this.ui = ui;
+        displayName = row.getString("Display Name");
         this.x = x;
         this.y = y;
         this.z = z;
@@ -135,9 +136,5 @@ public class Planet extends PApplet
         return displayName;  
     }
 
-    public Planet(TableRow row)
-    {
-        displayName = row.getString("Display Name");
-    }
 
 }

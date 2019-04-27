@@ -45,7 +45,7 @@ public class UI extends PApplet
     public void setup()
     {
         loadData();
-        printPlanets();
+        //printPlanets();
 
         for(int i = 0; i < stars.length; i++)
         {
@@ -130,10 +130,6 @@ public class UI extends PApplet
         planet.update(map(mouseX, 0, width, 0, 1));
         planet.render();
         popMatrix();
-        for (Planet p : planets)
-        {
-        text(p.getDisplayName(), 20 + 20, 20);
-        }
     }
  
     public void draw()
@@ -159,6 +155,7 @@ public class UI extends PApplet
         //     System.out.println("Left arrow key pressed");
         // }
     }
+    private ArrayList<Planet> planets = new ArrayList<Planet>();
 
 }
 
