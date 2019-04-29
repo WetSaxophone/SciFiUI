@@ -38,9 +38,10 @@ public class UI extends PApplet
 
     public void settings()
     {
-        // size(1500, 800);
+        
+        size(1500, 800);
         // Use fullscreen instead of size to make your interface fullscreen
-        fullScreen(); 
+        //fullScreen(); 
     }
 
     public void setup()
@@ -68,7 +69,7 @@ public class UI extends PApplet
 
         for (TableRow row : table.rows()) 
         {
-            planet = new Planet(this, row, random(-width,width), random(-height, height), random(100));
+            planet = new Planet(this, row, random(-width,width), random(-height, height), random(50));
             planets.add(planet);
 
         }
@@ -153,8 +154,8 @@ public class UI extends PApplet
     {
         fill(0);
         noStroke();
-        float sx = map(planet.getX() / planet.getZ(), 0, 1, width - border*4, width - border*4 + radar.getRadius());
-        float sy = map(planet.getY() / planet.getZ(), 0, 1, border*4, border*4 + radar.getRadius());
+        float sx = map(planet.getX() / planet.getZ(), 0, border, width - border*4, width - border*4 + radar.getRadius());
+        float sy = map(planet.getY() / planet.getZ(), 0, border, border*4, border*4 + radar.getRadius());
         fill(255);
         ellipse(sx, sy, 12, 12);
         pushMatrix();
