@@ -141,31 +141,11 @@ public class UI extends PApplet
         textSize(30);
         textAlign(LEFT, CENTER);
         text("Planets Passed: " + planet.getPlanetsPassed(), x, y);
-        //text("Planet Name: " + planet.getDisplayName(), x, y - border);
-
 
         text("Planet Name: " + planets.get(planetN).getDisplayName(), x, y - border);
 
         textSize(14);
 
-        
-        // for (Planet planet : planets) {
-        //     System.out.println(planet);
-        // }
-
-
-        //     fill(255);
-        //     text(p.getDisplayName(), x + 20, y);
-        // }
-        // for(int i = 0; i <= planet.getPlanetsPassed(); i++ )
-        // {
-        //     if(i + 1 == planet.getPlanetsPassed())
-        //     {
-        //     System.out.println("Planet just passed: "+planets.get(planet.getPlanetsPassed()));
-
-        //     }
-        
-        // }
     }
 
 
@@ -173,11 +153,8 @@ public class UI extends PApplet
     {
         fill(0);
         noStroke();
-        // width - border*4, border*4
-        // float sx = map(planet.getX() / planet.getZ(), planet.getX(), width, width - border*4);
-        // float sy = map(planet.getY() / planet.getZ(), planet.getY(), height, border*4);
-        float sx = map(planet.getX() / planet.getZ(), 0, 30, width - border*4, width - border*4 + radar.getRadius());
-        float sy = map(planet.getY() / planet.getZ(), 0, 30, border*4, border*4 + radar.getRadius());
+        float sx = map(planet.getX() / planet.getZ(), 0, 1, width - border*4, width - border*4 + radar.getRadius());
+        float sy = map(planet.getY() / planet.getZ(), 0, 1, border*4, border*4 + radar.getRadius());
         fill(255);
         ellipse(sx, sy, 12, 12);
         pushMatrix();
@@ -199,11 +176,6 @@ public class UI extends PApplet
 
         b.update();
         b.render();
-
-
-
-        //mc.update();
-        //mc.render();
 
         // if (checkKey(LEFT))
         // {
