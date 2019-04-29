@@ -14,6 +14,7 @@ public class UI extends PApplet
     Radar radar;
     Star[] stars = new Star[400];
     Planet planet;
+    public int planetN = 0;
 
 
 
@@ -142,24 +143,11 @@ public class UI extends PApplet
         text("Planets Passed: " + planet.getPlanetsPassed(), x, y);
         //text("Planet Name: " + planet.getDisplayName(), x, y - border);
 
+
+        text("Planet Name: " + planets.get(planetN).getDisplayName(), x, y - border);
+
         textSize(14);
 
-        for(Planet planet : planets)
-        {
-            int i = 1;
-            while(i > planets.length)
-            {
-                if(planet.getPlanetsPassed() == i)
-                {
-                    i += 1;
-                }
-                else
-                {
-                    i = planet.getPlanetsPassed();
-                }
-                text(planet.getDisplayName(), x, y - border);
-            }
-        }
         
         // for (Planet planet : planets) {
         //     System.out.println(planet);

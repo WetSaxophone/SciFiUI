@@ -11,7 +11,10 @@ public class Planet extends PApplet
     private float y;
     private float z;
     private float planetSpeed;
-    public int planetsPassed;
+    private int planetsPassed;
+    float r;
+    float g;
+    float b;
 
 
 
@@ -22,6 +25,10 @@ public class Planet extends PApplet
         this.x = x;
         this.y = y;
         this.z = z;
+        this.r = random(25,50);
+        this.g = random(25,50);
+        this.b = random(25,50);
+
     }
 
     public void update(float planetSpeed)
@@ -35,6 +42,11 @@ public class Planet extends PApplet
             planetsPassed += 1;
             System.out.println(planetsPassed);
             
+            this.r = random(25,50);
+            this.g = random(25,50);
+            this.b = random(25,50);
+
+            ui.planetN ++;
         }
 
 
@@ -42,7 +54,7 @@ public class Planet extends PApplet
     
     public void render()
     {
-        ui.fill(random(20,25),random(20,25),random(20,25));
+        ui.fill(r,g,b);
         ui.noStroke();
 
         float sx = map(x / z, 0, 1, 0, width);
