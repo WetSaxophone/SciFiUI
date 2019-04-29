@@ -4,9 +4,9 @@ Name: Richie Meyer
 
 Student Number: C17303563
 
-Fork this repository and use it a starter project for your assignment
 
 # Description of the assignment
+
 
 # Instructions
 
