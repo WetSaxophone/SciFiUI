@@ -119,11 +119,23 @@ public class UI extends PApplet
     {
         pushMatrix();
         translate(width/2, height/2);
-        for(int i = 0; i < stars.length; i++)
+        if(fuel.getCurrentFuel() < 249)
         {
-            stars[i].update(map(mouseX, 0, width, 0, 10));
-            stars[i].render();
+            for(int i = 0; i < stars.length; i++)
+            {
+                stars[i].update(map(mouseX, 0, width, 0, 10));
+                stars[i].render();
+            }
         }
+        else
+        {
+            for(int i = 0; i < stars.length; i++)
+            {
+                stars[i].update((float)0.07);
+                stars[i].render();
+            }
+        }
+        
         popMatrix();
     }
 
@@ -132,8 +144,16 @@ public class UI extends PApplet
 
         pushMatrix();
         translate(width/2, height/2);
-        planet.update(map(mouseX, 0, width, 0, 1));
-        planet.render();
+        if(fuel.getCurrentFuel() < 249)
+        {
+            planet.update(map(mouseX, 0, width, 0, 1));
+            planet.render();
+        }
+        else
+        {
+            planet.update(map(mouseX, 0, width, 0, (float)0.03));
+            planet.render();
+        }
         popMatrix();
 
     
@@ -196,11 +216,17 @@ public class UI extends PApplet
         {
             text("Fuel Level: Medium", width - border * 4, height - border*(float)7.5);
         }
-        if(fuel.getCurrentFuel() > 200)
+        if((fuel.getCurrentFuel() > 200) && (fuel.getCurrentFuel() < 249))
         {
             textSize(22);
             fill(240,0,0);
             text("Fuel Level: Low", width - border * 4, height - border*(float)7.5);
+        }
+        if(fuel.getCurrentFuel() == 250)
+        {
+            textSize(22);
+            fill(240,0,0);
+            text("Fuel Level: Empty", width - border * 4, height - border*(float)7.5);
         }
         textSize(18);
         fill(255);
