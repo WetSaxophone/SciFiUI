@@ -18,10 +18,15 @@ public class Fuel extends PApplet
     
     public void render()
     {
+
+        ui.strokeWeight(3);
         ui.noFill();
         ui.stroke(255);
 
-        ui.line(2,3,4,ui.border);
+        ui.line(ui.width - ui.border * 2, ui.height - ui.border * 2, ui.width - ui.border*2, ui.height - ui.border*7);
+        ui.line(ui.width - ui.border * 4, ui.height - ui.border * 2, ui.width - ui.border*4, ui.height - ui.border*7);
+        ui.line(ui.width - ui.border * 2, ui.height - ui.border * 2, ui.width - ui.border * 4, ui.height - ui.border * 2);
+
         
     }
 

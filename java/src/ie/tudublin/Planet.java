@@ -34,7 +34,7 @@ public class Planet extends PApplet
     public void update(float planetSpeed)
     {
         z = z - planetSpeed;
-        if(z < 1)
+        if(z < 2)
         {
             z = width;
             x = random(random(-width, width/(float)3.5), random(width/(float)1.5, width));
