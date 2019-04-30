@@ -170,7 +170,7 @@ public class UI extends PApplet
 
     public void mousePressed()
     {
-       
+
 
         // if (value == 0) {
         //     value = 255;
@@ -179,28 +179,54 @@ public class UI extends PApplet
             
         // }
     }
+
+    public void drawFuel()
+    {
+        
+        fuel.update();
+        fuel.render();
+        fill(255);
+        textSize(18);
+        textAlign(CENTER, CENTER);
+        if(fuel.getCurrentFuel() < 100)
+        {
+            text("Fuel Level: High", width - border * 4, height - border*(float)7.5);
+        }
+        if((fuel.getCurrentFuel() > 101) && (fuel.getCurrentFuel() < 199))
+        {
+            text("Fuel Level: Medium", width - border * 4, height - border*(float)7.5);
+        }
+        if(fuel.getCurrentFuel() > 200)
+        {
+            textSize(22);
+            fill(240,0,0);
+            text("Fuel Level: Low", width - border * 4, height - border*(float)7.5);
+        }
+        textSize(18);
+        fill(255);
+
+    }
         
 
  
     public void draw()
     {
         background(0);
-        // drawStars();
-        // drawPlanets();
-        // drawUI();
-        // textAlign(LEFT, CENTER);
-        // drawRadar();
+        drawStars();
+        drawPlanets();
+        drawUI();
+        textAlign(LEFT, CENTER);
+        drawRadar();
+        drawFuel();
 
-        // b.update();
-        // b.render();
+        b.update();
+        b.render();
 
-        fuel.update();
-        fuel.render();
 
 
         // if (checkKey(LEFT))
         // {
-        //     System.out.println("Left arrow key pressed");
+
         // }
     }
     private ArrayList<Planet> planets = new ArrayList<Planet>();
