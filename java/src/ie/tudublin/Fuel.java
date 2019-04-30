@@ -14,18 +14,34 @@ public class Fuel extends PApplet
         this.fuel = fuel;
         
     }
-
     
     public void render()
     {
+        float currentFuel = (ui.height - ui.border * 2) - (ui.height - ui.border * 7);
+        float measurement = 8;
+        float gap = ((ui.height - ui.border * 2) - (ui.height - ui.border * 7)) / measurement;
+        float current = 0;
 
         ui.strokeWeight(3);
         ui.noFill();
         ui.stroke(255);
 
-        ui.line(ui.width - ui.border * 2, ui.height - ui.border * 2, ui.width - ui.border*2, ui.height - ui.border*7);
-        ui.line(ui.width - ui.border * 4, ui.height - ui.border * 2, ui.width - ui.border*4, ui.height - ui.border*7);
-        ui.line(ui.width - ui.border * 2, ui.height - ui.border * 2, ui.width - ui.border * 4, ui.height - ui.border * 2);
+        ui.line(ui.width - ui.border * 3, ui.height - ui.border * 2, ui.width - ui.border*3, ui.height - ui.border*7);
+        ui.line(ui.width - ui.border * 5, ui.height - ui.border * 2, ui.width - ui.border*5, ui.height - ui.border*7);
+        ui.line(ui.width - ui.border * 3, ui.height - ui.border * 2, ui.width - ui.border * 5, ui.height - ui.border * 2);
+        ui.line(ui.width - ui.border * 3, ui.height - ui.border*7, ui.width - ui.border*5, ui.height - ui.border*7);
+
+        ui.fill(153,0,0);
+        ui.rect(ui.width - ui.border*5, ui.height - ui.border*7, ui.border*2, currentFuel);
+        ui.noFill();
+
+        current = gap;
+        for(int i = 0; i < measurement; i++)
+        {
+            ui.strokeWeight(2);
+            ui.line(ui.width - ui.border * 5, ui.height - ui.border * 7 + gap, ui.width - ui.border * 5 + 15, ui.height - ui.border * 7 + gap);
+            gap = gap + current;
+        }
 
         
     }
@@ -35,6 +51,8 @@ public class Fuel extends PApplet
     {
 
     }
+
+
 
     /**
      * @return the ui
