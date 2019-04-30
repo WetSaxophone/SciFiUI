@@ -49,12 +49,12 @@ public class Fuel extends PApplet
     }
 
 
-    public void update()
+    public void update(float currentConsumption)
     {
         fuelCapacity = 250;
         if(currentFuel < 250)
         {
-        currentFuel += 0.8;
+        currentFuel += currentConsumption;
         }
         else
         {

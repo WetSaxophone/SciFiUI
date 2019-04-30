@@ -183,7 +183,7 @@ public class UI extends PApplet
     public void drawFuel()
     {
         
-        fuel.update();
+        fuel.update(map(mouseX, 0, width, 0, (float)0.5));
         fuel.render();
         fill(255);
         textSize(18);
