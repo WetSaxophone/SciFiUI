@@ -10,6 +10,7 @@ public class Button extends PApplet
     private float width;
     private float height;
     private String text;
+    public float colour;
 
     public Button(UI ui, float x, float y, float width, float height, String text)
     {
@@ -23,14 +24,14 @@ public class Button extends PApplet
 
     public void update()
     {
-        
+        colour = 255;
     }
-
 
     public void render()
     {
+
         ui.noFill();
-        ui.stroke(255);
+        ui.stroke(colour);
         ui.rect(x, y, width, height);
         ui.textAlign(PApplet.CENTER, PApplet.CENTER);
         ui.text(text, x + width * 0.5f, y + height * 0.5f);

@@ -6,8 +6,8 @@ Student Number: C17303563
 
 
 # Description of the assignment
-
-
+The assignment we were given was to show our skill with what we learned using Java and Processing. It required us to build a user interface similar to what you would find in movies or games. I used processing in order to create the visuals and Java in order to instanciate classes and make objects.
+My project in particular was based off this image
 # Instructions
 
 # How it works

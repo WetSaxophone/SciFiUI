@@ -60,7 +60,7 @@ public class UI extends PApplet
 
         b = new Button(this, border*2, border*2, 200, 50, "Click Here To Refuel");
 
-        fuel = new Fuel(this, 100);
+        fuel = new Fuel(this);
 
     }
 
@@ -188,17 +188,6 @@ public class UI extends PApplet
 
     int value = 0;
 
-    public void mousePressed()
-    {
-
-
-        // if (value == 0) {
-        //     value = 255;
-        // } else {
-        //     value = 0;
-            
-        // }
-    }
 
     public void drawFuel()
     {
@@ -232,6 +221,18 @@ public class UI extends PApplet
         fill(255);
 
     }
+
+    //b = new Button(this, border*2, border*2, 200, 50, "Click Here To Refuel");
+
+
+    public void mousePressed()
+    {
+        if((fuel.currentFuel > 0) && (mouseX > border*2) && (mouseX < border*2 + 200) && (mouseY < border*2 + 50) && (mouseY > border*2))
+        {
+            fuel.currentFuel = 0;
+            b.colour = 0;
+        }
+    }
         
 
  
@@ -250,10 +251,10 @@ public class UI extends PApplet
 
 
 
-        // if (checkKey(LEFT))
-        // {
+        if (checkKey(LEFT))
+        {
 
-        // }
+        }
     }
     private ArrayList<Planet> planets = new ArrayList<Planet>();
 

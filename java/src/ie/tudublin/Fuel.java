@@ -5,15 +5,12 @@ import processing.core.PApplet;
 public class Fuel extends PApplet
 {
     private UI ui;
-    private float fuel;
-    private float currentFuel;
-    private float fuelCapacity;
+    public float currentFuel;
     
 
-    public Fuel(UI ui, float fuel)
+    public Fuel(UI ui)
     {
         this.ui = ui;
-        this.fuel = fuel;
     }
     
     public void render()
@@ -51,7 +48,6 @@ public class Fuel extends PApplet
 
     public void update(float currentConsumption)
     {
-        fuelCapacity = 250;
         if(currentFuel < 250)
         {
         currentFuel += currentConsumption;
@@ -79,19 +75,6 @@ public class Fuel extends PApplet
         this.ui = ui;
     }
 
-    /**
-     * @return the fuel
-     */
-    public float getFuel() {
-        return fuel;
-    }
-
-    /**
-     * @param fuel the fuel to set
-     */
-    public void setFuel(float fuel) {
-        this.fuel = fuel;
-    }
 
     /**
      * @return the currentFuel
