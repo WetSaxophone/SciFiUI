@@ -59,8 +59,6 @@ public class UI extends PApplet
 
         b = new Button(this, border*2, border*2, 200, 50, "Click Here To Refuel");
 
-
-        // mc = new MovingCircle(this, width / 2, height * .75f, 50);
     }
 
     public void loadData()
@@ -154,6 +152,7 @@ public class UI extends PApplet
     {
         fill(0);
         noStroke();
+        //map planets to radar
         float sx = map(planet.getX() / planet.getZ(), 0, border, width - border*4, width - border*4 + radar.getRadius());
         float sy = map(planet.getY() / planet.getZ(), 0, border, border*4, border*4 + radar.getRadius());
         fill(255);
@@ -163,20 +162,37 @@ public class UI extends PApplet
         radar.render();
         popMatrix();
     }
+
+    int value = 0;
+
+    public void mousePressed()
+    {
+       
+
+        // if (value == 0) {
+        //     value = 255;
+        // } else {
+        //     value = 0;
+            
+        // }
+    }
         
 
  
     public void draw()
     {
-        background(0);
-        drawStars();
-        drawPlanets();
-        drawUI();
-        textAlign(LEFT, CENTER);
-        drawRadar();
+        // background(0);
+        // drawStars();
+        // drawPlanets();
+        // drawUI();
+        // textAlign(LEFT, CENTER);
+        // drawRadar();
 
-        b.update();
-        b.render();
+        // b.update();
+        // b.render();
+
+        fill(value);
+        rect(25, 25, 50, 50);
 
         // if (checkKey(LEFT))
         // {
