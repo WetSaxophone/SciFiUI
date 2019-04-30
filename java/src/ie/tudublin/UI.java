@@ -14,6 +14,7 @@ public class UI extends PApplet
     Radar radar;
     Star[] stars = new Star[400];
     Planet planet;
+    Fuel fuel;
     public int planetN = 0;
 
 
@@ -58,6 +59,8 @@ public class UI extends PApplet
         radar = new Radar(this, 1, width - border*4, border*4, 100);
 
         b = new Button(this, border*2, border*2, 200, 50, "Click Here To Refuel");
+
+        fuel = new Fuel(this, 100);
 
     }
 
