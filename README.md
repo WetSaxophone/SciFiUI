@@ -149,7 +149,7 @@ Throughout the course I struggled with some of the key aspects of object oriente
 ```
 The second rectangle (black one) is the one that actually moves, not the red one. We can see this because the height variable 'currentFuel'. This value starts at 0 and as the speed of the ship increases or  decreases the currentFuel value is increased depending on the speed of the ship. Then once the fuel is 'empty' and the button is pressed, the currentFuel value is set back to 0. 
 # SciFI Video
-
+[![YouTube](http://img.youtube.com/vi/J2kHSSFA4NU/0.jpg)](https://www.youtube.com/watch?v=BuNp8TyxGps&feature=youtu.be)
 # Markdown Tutorial
 
 This is *emphasis*
